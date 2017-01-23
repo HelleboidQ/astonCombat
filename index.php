@@ -51,26 +51,20 @@ session_start();
                             $degats = $j1->attaque();
                             $j2->setVie($j2->getVie() - $degats);
                             if ($j2->enVie()) {
-                                // echo "Vie de " . $j2->getPseudo() . " : " . $j2->getVie() . "<br />";
                                 ?>
                                 <div class="alert alert-danger">
                                     Bim -<?= $degats ?>
                                 </div>
                                 <?php
-                            } else {
-                                // echo "MORT";
                             }
                             $degats = $j2->attaque();
                             $j1->setVie($j1->getVie() - $degats);
                             if ($j1->enVie()) {
-                                // echo "Vie de " . $j1->getPseudo() . " : " . $j1->getVie() . "<br />";
                                 ?>
                                 <div class="alert alert-danger">
                                     Bim -<?= $degats ?>
                                 </div>
                                 <?php
-                            } else {
-                                // echo "MORT";
                             }
                         } else if ($_POST['type2'] == 1) {
                             //ATQ vs DEF
@@ -79,17 +73,12 @@ session_start();
                             if ($degats > $defense) {
                                 $j2->setVie($j2->getVie() - ($degats - $defense));
                                 if ($j2->enVie()) {
-                                    //  echo "Vie de " . $j2->getPseudo() . " : " . $j2->getVie() . "<br />";
                                     ?>
                                     <div class="alert alert-danger">
                                         Bim -<?= ($degats - $defense ) ?>
                                     </div>
                                     <?php
-                                } else {
-                                    //   echo "MORT";
                                 }
-                            } else {
-                                // echo "Defense Sup";
                             }
                         } else {
                             //ATQ vs Potion
@@ -97,11 +86,6 @@ session_start();
 
                             $degats = $j1->attaque();
                             $j2->setVie($j2->getVie() - $degats);
-                            if ($j2->enVie()) {
-                                //  echo "Vie de " . $j2->getPseudo() . " : " . $j2->getVie() . "<br />";
-                            } else {
-                                // echo "MORT";
-                            }
                         }
                     } else if ($_POST['type'] == 1) {
                         if ($_POST['type2'] == 0) {
@@ -117,19 +101,13 @@ session_start();
                                         Bim -<?= ($degats - $defense) ?>
                                     </div>
                                     <?php
-                                } else {
-                                    //   echo "MORT";
                                 }
-                            } else {
-                                // echo "Defense Sup";
                             }
                         } else if ($_POST['type2'] == 1) {
                             //DEF vs DEF
-                            // echo "Defense VS Defense";
                         } else {
                             //DEF vs Potion
                             $j2->soigne(10);
-                            // echo "Defense VS Potion ... ";
                         }
                     } else {
                         if ($_POST['type2'] == 0) {
@@ -139,23 +117,14 @@ session_start();
                             $defense = $j1->defense();
                             if ($degats > $defense) {
                                 $j1->setVie($j1->getVie() - $degats);
-                                if ($j1->enVie()) {
-                                    //  echo "Vie de " . $j1->getPseudo() . " : " . $j1->getVie() . "<br />";
-                                } else {
-                                    //  echo "MORT";
-                                }
-                            } else {
-                                //  echo "Defense Sup";
                             }
                         } else if ($_POST['type2'] == 1) {
                             //Potion vs DEF
                             $j1->soigne(10);
-                            // echo "Potion VS Defense ... <br />";
                         } else {
                             //Potion vs Potion
                             $j1->soigne(10);
                             $j2->soigne(10);
-                            // echo "Potion VS Potion ... WOW ";
                         }
                     }
                 }

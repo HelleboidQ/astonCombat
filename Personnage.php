@@ -27,10 +27,6 @@ class Personnage {
         return $this->vie > 0;
     }
 
-    /*
-     * Soigne un montant de point de vie
-     */
-
     function soigne($pv) {
         if ($this->vie + $pv >= 100)
             $this->vie = 100;

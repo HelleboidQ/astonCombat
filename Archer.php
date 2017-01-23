@@ -14,7 +14,7 @@
 class Archer extends Personnage {
 
     function __construct($nom) {
-        parent::__construct(100, 0, $nom);
+        parent::__construct(60, 0, $nom);
     }
 
     function attaque() {

@@ -17,9 +17,14 @@ $chevalier = new Chevalier("Aragorn");
     <body>
 
         <?php
-        /* while ($archer->enVie() || $chevalier->enVie()) {
+        while ($archer->enVie() || $chevalier->enVie()) {
+            $degats = $archer->attaque();
+            $chevalier->setVie($chevalier->getVie() - $degats);
 
-          } */
+
+            $degats = $chevalier->attaque();
+            $archer->setVie($archer->getVie() - $degats);
+        }
         ?>
         <?= ($archer->enVie() ? $archer->getNom() . $archer->gagneExperience(10) : $chevalier->getNom() . $chevalier->gagneExperience(10)) ?> a gagné le combat !
 

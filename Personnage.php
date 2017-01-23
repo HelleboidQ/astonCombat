@@ -13,7 +13,6 @@
  */
 class Personnage {
 
-    private $force;
     private $vie;
     private $experience;
     private $nom;
@@ -40,10 +39,6 @@ class Personnage {
             $this->vie += $pv;
     }
 
-    function getForce() {
-        return $this->force;
-    }
-
     function getExperience() {
         return $this->experience;
     }
@@ -63,12 +58,12 @@ class Personnage {
             $this->vie = $vie;
     }
 
-    function setForce($force) {
-        $this->force = $force;
-    }
-
     function setExperience($experience) {
         $this->experience = $experience;
+    }
+
+    function gagneExperience($experience) {
+        $this->experience += $experience;
     }
 
     function setNom($nom) {

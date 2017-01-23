@@ -21,7 +21,7 @@ $chevalier = new Chevalier("Aragorn");
 
           } */
         ?>
-        <?= ($archer->enVie() ? $archer->getNom() : $chevalier->getNom()) ?> a gagné le combat !
+        <?= ($archer->enVie() ? $archer->getNom() . $archer->gagneExperience(10) : $chevalier->getNom() . $chevalier->gagneExperience(10)) ?> a gagné le combat !
 
     </body>
 </html>

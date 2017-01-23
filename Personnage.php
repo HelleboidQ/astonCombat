@@ -17,8 +17,7 @@ class Personnage {
     private $experience;
     private $nom;
 
-    function __construct($force, $vie, $experience, $nom) {
-        $this->force = $force;
+    function __construct($vie, $experience, $nom) {
         $this->vie = $vie;
         $this->experience = $experience;
         $this->nom = $nom;

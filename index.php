@@ -1,7 +1,7 @@
 <?php
-include("Personnage.php");
-include("Archer.php");
-include("Chevalier.php");
+require("Personnage.php");
+require("Archer.php");
+require("Chevalier.php");
 
 
 $archer = new Archer("Legolas");
